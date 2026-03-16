@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya Idul Fitri 1447 H</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #0a3b2e 0%, #1b6b4f 50%, #2b8c6e 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Pattern Islami di Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 25%),
+                repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Ornamen Masjid */
+        .ornament {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .ornament-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.1), transparent);
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+
+        .ornament-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, rgba(255, 215, 0, 0.1), transparent);
+            clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+        }
+
+        .moon-star {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 60px;
+            color: rgba(255, 215, 0, 0.3);
+            transform: rotate(15deg);
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: rotate(15deg) scale(1); }
+            50% { opacity: 0.6; transform: rotate(15deg) scale(1.1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Header dengan Kaligrafi */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .arabic-calligraphy {
+            font-size: 3.5rem;
+            font-family: 'Traditional Arabic', 'Scheherazade', serif;
+            color: #ffd966;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            letter-spacing: 2px;
+            animation: glow 3s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px #ffd966; }
+            50% { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 40px #ffd700; }
+        }
+
+        .title {
+            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .date-hijri {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #ffd966;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        /* Kartu Ucapan Utama */
+        .greeting-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .greeting-card::before {
+            content: "﷽";
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 2.5rem;
+            font-family: 'Traditional Arabic', serif;
+            color: rgba(255, 215, 0, 0.1);
+            opacity: 0.3;
+        }
+
+        .greeting-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .main-greeting {
+            text-align: center;
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.4;
+        }
+
+        .main-greeting span {
+            color: #ffd966;
+            display: block;
+            font-size: 1.8rem;
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        .arabic-phrase {
+            text-align: center;
+            font-size: 2.2rem;
+            font-family: 'Traditional Arabic', serif;
+            color: #ffd966;
+            margin: 30px 0;
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+        .meaning {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .prayer {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 4px solid #ffd966;
+            color: #fff;
+            line-height: 1.8;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Grid Doa dan Kutipan */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffd966;
+        }
+
+        .quote-text {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .quote-source {
+            color: #ffd966;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Timer Countdown (opsional) */
+        .countdown-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .countdown-title {
+            color: #ffd966;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #fff;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            min-width: 80px;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd966;
+        }
+
+        .countdown-item small {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Tombol Share */
+        .share-section {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .share-title {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffd966;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .share-btn:hover {
+            background: #ffd966;
+            color: #0a3b2e;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #ffd966;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .arabic-calligraphy {
+                font-size: 2.2rem;
+            }
+
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .main-greeting {
+                font-size: 2rem;
+            }
+
+            .main-greeting span {
+                font-size: 1.3rem;
+            }
+
+            .arabic-phrase {
+                font-size: 1.6rem;
+            }
+
+            .greeting-card {
+                padding: 30px 20px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px;
+            }
+
+            .countdown-item span {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .arabic-calligraphy {
+                font-size: 1.8rem;
+            }
+
+            .quotes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ornamen Islami -->
+    <div class="ornament">
+        <div class="ornament-top"></div>
+        <div class="ornament-bottom"></div>
+        <div class="moon-star">🌙⭐</div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="arabic-calligraphy">عيد فطر سعيد</div>
+            <h1 class="title">Selamat Hari Raya Idul Fitri 1447 H</h1>
+            <div class="subtitle">Mohon Maaf Lahir dan Batin</div>
+            <div class="date-hijri">1 Syawal 1447 H • 20 Maret 2026 M</div>
+        </div>
+
+        <!-- Kartu Ucapan Utama -->
+        <div class="greeting-card">
+            <div class="main-greeting">
+                Taqabbalallahu minna wa minkum
+                <span>Semoga Allah menerima amal ibadah kita</span>
+            </div>
+
+            <div class="arabic-phrase">
+                اللَّهُمَّ اجْعَلْنَا مِنَ الْعَائِدِينَ وَالْفَائِزِينَ
+            </div>
+            
+            <div class="meaning">
+                "Ya Allah, jadikanlah kami termasuk orang-orang yang kembali (fitrah) dan orang-orang yang beruntung"
+            </div>
+
+            <div class="prayer">
+                ✦ Di hari yang suci ini, mari kita saling memaafkan dan menyucikan hati. 
+                Semoga fitrah kita kembali bersih seperti bayi yang baru lahir. 
+                Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum. ✦
+            </div>
+        </div>
+
+        <!-- Quotes Islami -->
+        <div class="quotes-grid">
+            <div class="quote-card">
+                <div class="quote-icon">🤲</div>
+                <p class="quote-text">"Sesungguhnya orang yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa."</p>
+                <p class="quote-source">(QS. Al-Hujurat: 13)</p>
+            </div>
+
+            <div class="quote-card">
+                <div class="quote-icon">✨</div>
+                <p class="quote-text">"Barangsiapa berpuasa Ramadhan kemudian mengikutinya dengan enam hari di bulan Syawal, maka ia seperti berpuasa setahun penuh."</p>
+                <p class="quote-source">(HR. Muslim)</p>
+            </div>
+
+            <div class="quote-card">
+                <div class="quote-icon">🕊️</div>
+                <p class="quote-text">"Dan bersegeralah kamu kepada ampunan dari Tuhanmu dan kepada surga yang luasnya seluas langit dan bumi."</p>
+                <p class="quote-source">(QS. Ali Imran: 133)</p>
+            </div>
+        </div>
+
+        <!-- Pesan Maaf dan Doa -->
+        <div style="background: rgba(255, 215, 0, 0.05); border-radius: 20px; padding: 30px; margin: 30px 0; text-align: center; color: #fff;">
+            <h3 style="color: #ffd966; margin-bottom: 20px; font-size: 1.5rem;">🌿 Untaian Doa dan Permohonan Maaf 🌿</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                Di hari yang penuh berkah ini, izinkan kami sekeluarga menghaturkan permohonan maaf yang tulus. 
+                Jika ada kata yang menusuk, sikap yang menyakiti, atau tingkah yang mengecewakan, 
+                mohon bukakan pintu maaf yang sebesar-besarnya. Semoga Allah menyatukan hati kita 
+                dalam ikatan ukhuwah islamiyah yang abadi.
+            </p>
+            <p style="font-size: 1.3rem; color: #ffd966; margin-top: 20px;">
+                مَا شَاءَ اللَّهُ
+            </p>
+        </div>
+
+        <!-- Countdown menuju Idul Fitri (jika masih sebelum lebaran) -->
+        <div class="countdown-container" id="countdownContainer">
+            <div class="countdown-title">⏳ Menuju 1 Syawal 1447 H ⏳</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="days">0</span>
+                    <small>Hari</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">0</span>
+                    <small>Jam</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">0</span>
+                    <small>Menit</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">0</span>
+                    <small>Detik</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Share -->
+        <div class="share-section">
+            <div class="share-title">Bagikan Ucapan Selamat</div>
+            <div class="share-buttons">
+                <a href="#" class="share-btn" onclick="shareToWhatsApp()">📱</a>
+                <a href="#" class="share-btn" onclick="shareToFacebook()">📘</a>
+                <a href="#" class="share-btn" onclick="shareToTwitter()">🐦</a>
+                <a href="#" class="share-btn" onclick="copyLink()">🔗</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 1447 H / 2026 M - Ucapan Idul Fitri dari keluarga besar</p>
+            <p>Dipersembahkan dengan penuh ketulusan hati ❤️</p>
+            <p style="margin-top: 15px;">
+                <a href="#">🌙 Ramadan Kareem</a> • 
+                <a href="#">✨ Syawal Mubarak</a> • 
+                <a href="#">🕋 Taqabbalallahu minna wa minkum</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown menuju 1 Syawal 1447 H (20 Maret 2026)
+        function updateCountdown() {
+            const lebaranDate = new Date('March 20, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = lebaranDate - now;
+
+            if (distance < 0) {
+                // Jika sudah melewati tanggal lebaran
+                document.getElementById('countdownContainer').innerHTML = `
+                    <div style="text-align: center; color: #ffd966; padding: 20px;">
+                        ✨ Selamat Hari Raya Idul Fitri 1447 H! ✨
+                    </div>
+                `;
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+        }
+
+        // Update countdown setiap detik
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Fungsi Share
+        function shareToWhatsApp() {
+            const text = encodeURIComponent(
+                "Assalamu'alaikum Warahmatullahi Wabarakatuh 🌙\n\n" +
+                "Selamat Hari Raya Idul Fitri 1447 H, 20 Maret 2026.\n" +
+                "Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum.\n" +
+                "Mohon maaf lahir dan batin.\n\n" +
+                "Semoga Allah menerima amal ibadah kita dan mempertemukan kembali dengan Ramadan berikutnya. Aamiin."
+            );
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function shareToFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareToTwitter() {
+            const text = encodeURIComponent(
+                "Selamat Hari Raya Idul Fitri 1447 H - Taqabbalallahu minna wa minkum"
+            );
+            window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link berhasil disalin!');
+            }).catch(() => {
+                alert('Gagal menyalin link');
+            });
+        }
+
+        // Efek tambahan: menampilkan sapaan berdasarkan waktu
+        function getGreeting() {
+            const hour = new Date().getHours();
+            let greeting = "";
+
+            if (hour < 12) {
+                greeting = "Selamat Pagi";
+            } else if (hour < 18) {
+                greeting = "Selamat Siang";
+            } else {
+                greeting = "Selamat Malam";
+            }
+
+            // Tambahkan elemen greeting jika ingin
+            const header = document.querySelector('.header');
+            if (header && !document.querySelector('.time-greeting')) {
+                const timeGreeting = document.createElement('div');
+                timeGreeting.className = 'time-greeting';
+                timeGreeting.style.cssText = 'color: rgba(255,215,0,0.8); margin-top: 10px; font-size: 1rem;';
+                timeGreeting.innerHTML = `🕌 ${greeting}, saudara/saudari seiman. Semoga berkah selalu menyertai.`;
+                header.appendChild(timeGreeting);
+            }
+        }
+
+        getGreeting();
+
+        // Animasi smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
